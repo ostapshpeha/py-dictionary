@@ -14,7 +14,6 @@ class Dictionary:
         if node is None:
             self.hash_table[idx] = Node(key, hsh, value)
             self.size += 1
-            return
         else:
             while node is not None:
                 if hsh == node.hsh and node.key == key:
@@ -29,7 +28,7 @@ class Dictionary:
         if self.size > self.capacity * 0.75:
             self.__resize__()
 
-    def __getitem__(self, key: Hashable) -> None:
+    def __getitem__(self, key: Hashable) -> Any:
         hsh = hash(key)
         idx = hsh % len(self.hash_table)
         head = self.hash_table[idx]
