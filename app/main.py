@@ -37,7 +37,7 @@ class Dictionary:
             if hsh == head.hsh and head.key == key:
                 return head.value
             head = head.next_iter
-        raise KeyError(f'Key {key} not found')
+        raise KeyError(f"Key {key} not found")
 
     def __len__(self) -> int:
         return self.size
